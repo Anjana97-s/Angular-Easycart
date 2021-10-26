@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="d-inline p-2">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">EsayCart</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+        <a class="nav-link"  routerLink="/wishlist">Wishlist</a>
+        <a class="nav-link" routerLink="/cartlist" >My Cart</a>
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">View</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <form [formGroup]="cartForm"(ngSubmit)="onSubmit()" >
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">SubTotal</th>
+  
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of products "> 
+        
+        <td class="align-middle">{{p.prdName}}
+          </td>
+        <td class="align-middle">{{p.price}}</td>
+    
+  
+    <td>   <input
+      type="text"
+      class="form-control"
+      formControlName="quantity"
+      [(ngModel)]="quantity"
+    />  </td>
+    <td class="align-middle">{{p.price * quantity}}</td>
+  <td>   <button type="submit" class="btn btn-success" style="margin-left: 10px">Get it</button>
+  </td>
+  </tr>
+    </tbody>
+  </table>
+</div>
+   
+  </form>
+</div>
+</div>
+
+
+
+
+

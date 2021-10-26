@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="d-inline p-2">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">EasyCart</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" routerLink="/product">Home</a>
+            <a class="nav-link" routerLink="/viewproduct">View Products</a>
+            <a class="nav-link" routerLink="/cartlist">MyCart</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+    <div class="list row">
+      <div class="col-md-8">
+       <!-- <div class="input-group mb-3">
+          From Date  <input
+            type="date"
+            class="form-control"
+            [(ngModel)]="fromdate"
+          />
+          To Date  <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="todate"
+        />
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              (click)="searchProduct()"
+
+            >
+              Search
+            </button>
+          </div>
+        </div>-->
+      </div>
+      </div>
+      </div>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Product Id</th>
+          <th>Product Name</th>
+          <th>Description</th>
+          <th>Price</th>
+<th>Seller</th>
+        <th>Stock</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of products ">
+          <td>{{p.productId}}</td>
+          <td>{{p.prdName}}</td>
+          <td>{{p.prdDesc}}</td>
+          <td>{{p.price}}</td>
+          <td>{{p.seller}}</td>
+          <td>{{p.stock}}</td>
+
+      </table>
+</div>
+
+  </div>
+  </div>

@@ -1,0 +1,9 @@
+<p>order works!</p>
+<table>
+    <tr *ngFor="let p of list.cartItems">
+        <td class="align-middle">{{p.product.prdName}}</td>
+        <td class="align-middle">{{p.product.price }}</td>
+        <td class="align-middle">{{p.quantity}}</td>
+        </tr>
+<div >{{list.totalCost}}</div>
+</table>

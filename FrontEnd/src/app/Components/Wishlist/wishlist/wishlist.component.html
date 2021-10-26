@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="d-inline p-2">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">EasyCart</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" routerLink="/" >Home</a>
+        <a class="nav-link" routerLink="/cartlist"> My Cart</a>
+        <a class="nav-link" routerLink="/product" >Product</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+          <tr>
+              <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Price</th>
+             <th>Seller</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tbody>
+            <tr *ngFor="let p of wishlists ">
+              <td>{{p.product.productId}}</td>
+              <td>{{p.product.prdName}}</td>
+              <td>{{p.product.prdDesc}}</td>
+              <td>{{p.product.price}}</td>
+              <td>{{p.product.seller}}</td>
+                 
+    <td>                <button (click)="Remove(p.id)" class="btn btn-danger" style="margin-left: 10px">Remove</button>
+    </td>
+
+
+        </table>
+  </div>
+    
+</div>
+</div>

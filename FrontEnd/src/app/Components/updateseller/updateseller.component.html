@@ -1,0 +1,60 @@
+    <div class="container">
+        <div class="header">
+            <form [formGroup]="sellerForm" (ngSubmit)="onSubmit()">
+
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label"> First Name</label>
+                    <div class="col-sm-10">
+        
+                        <input class="form-control form-control-lg" formControlName="firstName" type="text"
+                            [(ngModel)]=seller.firstName aria-label=".form-control-lg example">
+                    </div>
+                </div>
+        
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Address</label>
+                    <div class="col-sm-10">
+                        <input type="text" [(ngModel)]=seller.address formControlName="address" class="form-control"
+                            id="inputPassword">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">City</label>
+                    <div class="col-sm-10">
+        
+                        <input class="form-control form-control-lg" formControlName="city" type="text" [(ngModel)]=seller.city
+                            aria-label=".form-control-lg example">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">State</label>
+                    <div class="col-sm-10">
+        
+                        <input class="form-control form-control-lg" formControlName="state" type="text" [(ngModel)]=seller.state
+                            aria-label=".form-control-lg example">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Country</label>
+                    <div class="col-sm-10">
+        
+                        <input class="form-control form-control-lg" formControlName="country" type="text"
+                            [(ngModel)]=seller.country aria-label=".form-control-lg example">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">PinCode</label>
+                        <div class="col-sm-10">
+        
+                        <input class="form-control form-control-lg" formControlName="pin" type="text" [(ngModel)]=seller.pin
+                                aria-label=".form-control-lg example">
+                        </div>
+                    </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+        
+        
+        
+        </form>
+        </div>
+       
+</div>

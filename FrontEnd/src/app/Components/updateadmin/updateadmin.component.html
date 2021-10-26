@@ -1,0 +1,29 @@
+  <div class="container">
+    <div class="header">
+    <form [formGroup]="adminForm" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3 row">
+      <label for="inputPassword" class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-10">
+
+        <input class="form-control form-control-lg" formControlName="name" type="text" [(ngModel)]=admin.name
+          aria-label=".form-control-lg example">
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="inputPassword" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+
+        <input class="form-control form-control-lg" formControlName="email" type="text" [(ngModel)]=admin.email
+          aria-label=".form-control-lg example">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+  </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="d-inline p-2">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">EasyCart</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" routerLink="/wishlist">Wishlist</a>
+          <a class="nav-link" routerLink="/product">Product</a>
+          <a class="nav-link" routerLink="/cartlist"> My Cart</a>
+          <a class="nav-link" routerLink="/viewseller"> View Seller</a>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+<h1 align="center" class="display-4 mb-5">My Cart</h1>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Action</th>
+    
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let p of carts.cartItems">
+            <td class="align-middle">{{p.product.prdName}}</td>
+            <td class="align-middle">{{p.product.price }}</td>
+            <td class="align-middle">{{p.quantity}}</td>
+            <td>    <button (click)="edit(p.id)" class="btn btn-warning float-right">Edit</button>
+            </td>
+            <td>    <button (click)="remove(p.id)" class="btn btn-danger float-right">Remove</button>
+            </td>
+    
+        
+    </tr>
+    
+    
+        </tbody>
+    </table>
+</div>
+
+<div *ngIf="carts.cartItems?.length >0; else empty">
+    <h1 style="display: inline;" class="card-header">Total:{{carts.totalCost}} </h1>
+  
+</div>
+<button (click)="order()" class="btn btn-danger float-right">Place Order</button>
+<ng-template #empty>
+    <h4 class="text-muted text-center">Cart is empty. Go to get something! :)</h4>
+</ng-template>
+
+</div>
+</div>

@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="d-inline p-2">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">EasyCart</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+          <a class="nav-link" routerLink="/wishlist">Wishlist</a>
+          <a class="nav-link" routerLink="/cartlist"> My Cart </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+<form  [formGroup]="cartForm"(ngSubmit)="onSubmit()">
+        <div class="mb-3 row">
+            <div *ngFor="let c of cart.cartItems">
+                <label for="cid" class="col-sm-2 col-form-label visually-hidden"> Cart Id</label>
+                <input type="text" class="form-control visually-hidden" id="cartid"  [(ngModel)]= c.id formControlName="id">
+                <label for="pid" class="col-sm-2 col-form-label visually-hidden"> Product Id</label>
+                <input type="text" class="form-control visually-hidden" id="pid"  [(ngModel)]=c.product.productId  formControlName="productId">
+                <div class="card">
+                  <div class="card-header">
+                    Product Details
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">{{c.product.prdName}}</h5>
+                    <p class="card-text">{{c.product.price}}</p>
+                  </div>
+                </div>
+                <label for="quantity" class="col-sm-2 col-form-label"> Quantity</label>
+                <input type="number" class="form-control" id="quantity"   formControlName="quantity">
+            </div>
+        </div>
+        
+        
+
+        <button type="submit" [disabled]="!cartForm.valid" class="btn btn-success">Update</button>
+
+
+
+</form>
+</div>
+</div>

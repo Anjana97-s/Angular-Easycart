@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col"></div>
+      <div class="col">
+        <h1 style="text-align: center;">Admin Registration Form</h1>
+        <form [formGroup]="productRegForm" (ngSubmit)="register()" style="margin-top: 10%;margin-left: 5%;">
+          <div class="mb-3">
+            
+              <label for="name" class="form-label"> First Name</label>
+              <input type="text" class="form-control"  formControlName="firstName" name="name" >
+              
+            </div>
+           <!-- <div class="mb-3">
+            
+                <label for="name" class="form-label"> Last Name</label>
+                <input type="text" class="form-control"  formControlName="lastName" name="name" >
+                
+              </div>-->
+              <div class="mb-3">
+            
+                <label for="name" class="form-label">  Address</label>
+                <input type="text" class="form-control"  formControlName="address" name="name" >
+                
+              </div>
+              <div class="mb-3">
+            
+                <label for="name" class="form-label">  City</label>
+                <input type="text" class="form-control"  formControlName="city" name="name" >
+                
+              </div>
+              <div class="mb-3">
+            
+                <label for="name" class="form-label">  State</label>
+                <input type="text" class="form-control"  formControlName="state" name="name" >
+                
+              </div>
+              <div class="mb-3">
+            
+                <label for="name" class="form-label">  PinCode</label>
+                <input type="text" class="form-control"  formControlName="pin" name="name" >
+                
+              </div>
+              <div class="mb-3">
+            
+                <label for="name" class="form-label">  Country</label>
+                <input type="text" class="form-control"  formControlName="country" name="name" >
+                
+              </div>
+              <div class="mb-3">
+            
+                <label for="name" class="form-label"> Phone Number</label>
+                <input type="text" class="form-control"  formControlName="phone" name="email" >
+                
+              </div>
+            <div class="mb-3">
+            
+                <label for="name" class="form-label"> Email</label>
+                <input type="email" class="form-control"  formControlName="email" name="email" >
+                
+              </div>
+          <div class="mb-3">
+            <label for="pass" class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="password" name="password" >
+           
+          </div>
+          <div class="mb-3">
+            
+          </div>
+          <div class="form-group">
+            <label for="file">Image Upload:</label>
+            <input type="file" class="form-control" accept="image/*" (change)="onSelectFile($event)" style="height: 100%;">
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      
+      </div>
+      <div class="col"></div>
+    </div>
